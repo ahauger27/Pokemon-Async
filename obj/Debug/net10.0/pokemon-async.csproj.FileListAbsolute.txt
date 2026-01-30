@@ -1,0 +1,14 @@
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\bin\Debug\net10.0\pokemon-async.exe
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\bin\Debug\net10.0\pokemon-async.deps.json
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\bin\Debug\net10.0\pokemon-async.runtimeconfig.json
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\bin\Debug\net10.0\pokemon-async.dll
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\bin\Debug\net10.0\pokemon-async.pdb
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.AssemblyInfoInputs.cache
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.AssemblyInfo.cs
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.csproj.CoreCompileInputs.cache
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.dll
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\refint\pokemon-async.dll
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.pdb
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.genruntimeconfig.cache
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\ref\pokemon-async.dll
