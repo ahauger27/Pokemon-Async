@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pokemon-async")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+427c350e9d724f1c3186f63e3236db850e09c6aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("pokemon-async")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pokemon-async")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

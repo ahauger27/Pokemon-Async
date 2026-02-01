@@ -12,3 +12,4 @@ D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\refin
 D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.pdb
 D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.genruntimeconfig.cache
 D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\ref\pokemon-async.dll
+D:\Coding\code_you\projects\CsharpProjects\pokemon-async\obj\Debug\net10.0\pokemon-async.sourcelink.json
