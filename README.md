@@ -6,7 +6,8 @@ Users can:
 3. Exit program
 
 HOW TO RUN 
-With a stable internet connection, run Program.cs in the terminal using `dotnet run`. When not connected to the internet, the program currently does not run as intended. 
+- With a stable internet connection, run Program.cs in the terminal using `dotnet run`. 
+- When not connected to the internet, the program currently does not run as intended. 
 
 UPDATE 2/7/26
 - The program now accesses all unique Pokemon from 1 - 1025 (no variants)
