@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/home/austin/Projects/git-repos/Pokemon-Async/pokemon-async.csproj": {}
+    "D:\\Coding\\code_you\\projects\\CsharpProjects\\Pokemon-Async\\pokemon-async.csproj": {}
   },
   "projects": {
-    "/home/austin/Projects/git-repos/Pokemon-Async/pokemon-async.csproj": {
+    "D:\\Coding\\code_you\\projects\\CsharpProjects\\Pokemon-Async\\pokemon-async.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/austin/Projects/git-repos/Pokemon-Async/pokemon-async.csproj",
+        "projectUniqueName": "D:\\Coding\\code_you\\projects\\CsharpProjects\\Pokemon-Async\\pokemon-async.csproj",
         "projectName": "pokemon-async",
-        "projectPath": "/home/austin/Projects/git-repos/Pokemon-Async/pokemon-async.csproj",
-        "packagesPath": "/home/austin/.nuget/packages/",
-        "outputPath": "/home/austin/Projects/git-repos/Pokemon-Async/obj/",
+        "projectPath": "D:\\Coding\\code_you\\projects\\CsharpProjects\\Pokemon-Async\\pokemon-async.csproj",
+        "packagesPath": "C:\\Users\\auhau\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding\\code_you\\projects\\CsharpProjects\\Pokemon-Async\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/austin/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\auhau\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

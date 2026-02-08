@@ -4,6 +4,11 @@ using System.Text.Json.Serialization;
 using System.Dynamic;
 using System.Reflection;
 
+/* TODO
+-ADD DATETIME USAGE TO TRACK HOW LONG IT TAKES TO BUILD THE POKEDEX;
+-ADD DATETIME TO STATE AT WHAT TIME POKEMON DETAILS ARE RETRIEVED;
+-INCORPORATE ENUM
+*/
 
 class Program
 {
@@ -11,45 +16,69 @@ class Program
     
     public static async Task Main()
     {
-        Console.WriteLine($"{Environment.NewLine}WELCOME TO THE POKEDEX CONSOLE APP{Environment.NewLine}");
         await LoadPokedex(); 
+        Console.WriteLine($"{Environment.NewLine}WELCOME TO THE POKEDEX CONSOLE APP");
         
         while (true)
         {
-            Console.WriteLine("");
-            Console.WriteLine
-            (@"OPTIONS MENU:
-            1. LIST ALL POKEMON
-            2. VIEW POKEMON DETAILS (WIP)
-            3. EXIT PROGRAM");
+            Console.WriteLine($"{Environment.NewLine}OPTIONS MENU:{Environment.NewLine}1. LIST ALL POKEMON{Environment.NewLine}2. VIEW POKEMON DETAILS{Environment.NewLine}3. EXIT PROGRAM");
             Console.Write("CHOOSE AN OPTION: ");
-
-            string? choice = Console.ReadLine();
-            switch (choice)
+            
+            try
             {
-                case "1":
-                    ListAllPokemon();
-                    break;
-                case "2":
-                    await DisplayPokemonDetails();
-                    break;
-                case "3":
-                    break;
+                string? choiceId = Console.ReadLine();
+                bool exists;
+                UserChoices choice = (UserChoices)int.Parse(choiceId);
+                exists = Enum.IsDefined(typeof(UserChoices), choice);
+                if (exists == false)
+                {
+                    Console.WriteLine($"{Environment.NewLine}{choice} is not a valid option.");
+                    continue;
+                }
+                switch (choice)
+                {
+                    case UserChoices.ListAllPokemon:
+                        ListAllPokemon();
+                        break;
+                    case UserChoices.ViewPokemonDetails:
+                        await DisplayPokemonDetails();
+                        break;
+                    case UserChoices.ExitProgram:
+                        Console.WriteLine($"{Environment.NewLine}Quitting program...");
+                        break;
+                }
+                if (choice == UserChoices.ExitProgram) break;
             }
-            if (choice == "3") break;
+            catch (FormatException)
+            {
+                Console.WriteLine($"{Environment.NewLine}Please input a valid number");
+                continue;
+            }
+            
         }
     }
     
+    public enum UserChoices
+    {
+        ListAllPokemon = 1,
+        ViewPokemonDetails = 2,
+        ExitProgram = 3
+    }
+
     public static async Task LoadPokedex()
     {
-        Console.WriteLine("Loading Pokedex...");
-        string URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151";
+        Console.WriteLine($"{Environment.NewLine}Loading Pokedex...");
+        TimeOnly timeStart = TimeOnly.FromDateTime(DateTime.Now);
+
+        string URL = "https://pokeapi.co/api/v2/pokemon?&limit=1025";
         try
         {
             using HttpClient client = new HttpClient();
             string pokemonJson = await client.GetStringAsync(URL);
             pokedex = JsonSerializer.Deserialize<Pokedex>(pokemonJson);
-            Console.WriteLine("Pokedex loaded");
+            
+            TimeSpan timeElapsed = TimeOnly.FromDateTime(DateTime.Now) - timeStart;
+            Console.WriteLine($"Pokedex loaded in {timeElapsed.Milliseconds} ms");
         }
         catch (Exception e)
         {
@@ -66,17 +95,17 @@ class Program
             int i = 0;
             foreach(var pokemon in pokedex.PokemonList)
             {
-                Console.WriteLine($"#{++i:000}: {pokemon?.Name?.ToUpper()}");
+                Console.WriteLine($"#{++i:0000}: {pokemon?.Name?.ToUpper()}");
             }
         }
     }
 
     public static async Task DisplayPokemonDetails()
     {
-        Console.Write($"{Environment.NewLine}Enter Pokemon Name: ");
+        Console.Write($"Enter Pokemon Name: ");
         string? name = Console.ReadLine()?.ToLower();
 
-        Console.WriteLine($"Loading details for {name?.ToUpper()}...");
+        Console.WriteLine($"Loading details...");
 
         // Found this LINQ query when googling how to search a list
         Pokemon? pokemon = pokedex?.PokemonList?.FirstOrDefault(p => p.Name == name);
@@ -90,16 +119,28 @@ class Program
 
             if (details == null) return;
 
-            Console.WriteLine($"{Environment.NewLine}Details for {pokemon?.Name?.ToUpper()}"); 
-            Console.WriteLine($"ID: {details.Id}");
+            Console.WriteLine($"{Environment.NewLine}Name: {pokemon?.Name?.ToUpper()}"); 
+            Console.WriteLine($"ID: #{details.Id}");
             Console.WriteLine($"Height: {details.Height}");
             Console.WriteLine($"Weight: {details.Weight}");
-            Console.WriteLine("Type(s):");
             if (details.Types != null)
             {
+                List<string> types = new List<string> { };
                 foreach(var type in details.Types)
                 {
-                    Console.WriteLine($"- {type.Type?.Name?.ToUpper()}");
+                    string? typeName = type?.Type?.Name?.ToUpper();
+                    if (typeName != null)
+                    {
+                        types.Add(typeName);
+                    }
+                }
+                if (types.Count < 2)
+                {
+                    Console.WriteLine($"Type: {types[0]}");
+                }
+                else
+                {
+                    Console.WriteLine($"Types: {string.Join(", ", types)}");
                 }
             }
         }
