@@ -14,4 +14,4 @@ UPDATE 2/7/26
 - The total time it takes to load the Pokedex is now monitored and printed to the console
 
 TODO
-- When the Pokedex fails to load. As of now, program will continue to run and display the OPTIONS MENU, but will not be able to 
+- When the Pokedex fails to load. As of now, program will continue to run and display the OPTIONS MENU, but will not be able to reattempt connecting to the api
